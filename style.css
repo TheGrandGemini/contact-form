@@ -1,0 +1,209 @@
+@import url("https://fonts.google.com/specimen/Karla");
+
+:root {
+  --green-lighter: hsl(148, 38%, 91%);
+  --green-medium: hsl(169, 82%, 27%);
+  --red: hsl(0, 66%, 54%);
+  --white: hsl(0, 0%, 100%);
+  --medium-grey: hsl(186, 15%, 59%);
+  --darker-grey: hsl(187, 24%, 22%);
+  --label-font-size: 16px;
+  --font-family: karla;
+
+  /*Family: [Karla](https://fonts.google.com/specimen/Karla)
+  - Weights: 400, 700 */
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--green-lighter);
+  padding: 12vh 5vw;
+  font-family: karla;
+  line-height: 1.3;
+  position: relative;
+}
+
+form {
+  background-color: var(--white);
+  padding: 1rem;
+  height: max-content;
+  border-radius: 10px;
+  color: var(--darker-grey);
+  margin-bottom: 10px;
+}
+
+.header-container {
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 26px;
+}
+
+.inputs-container {
+  font-size: 16px;
+  padding: 0 auto;
+}
+
+label {
+  display: block;
+  padding-bottom: 20px;
+}
+
+label p {
+  margin-bottom: 15px;
+}
+
+.first-name,
+.last-name,
+.email,
+.support,
+.enquiry,
+button {
+  width: 100%;
+  height: 40px;
+  border: solid var(--medium-grey) 1px;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.message {
+  width: 100%;
+  border: solid var(--medium-grey) 1px;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.support,
+.enquiry {
+  margin-bottom: 20px;
+  padding: 10px 30px;
+}
+
+.first-name:focus,
+.last-name:focus,
+.email:focus,
+.message:focus,
+.support:focus,
+.enquiry:focus,
+.first-name:active,
+.last-name:active,
+.email:active,
+.message:active,
+.support:active,
+.enquiry:active {
+  background-color: var(--green-lighter);
+  border: solid var(--medium-grey) 2px;
+}
+
+.first-name:hover,
+.last-name:hover,
+.email:hover,
+.message:hover,
+.support:hover,
+.enquiry:hover {
+  border: 2px solid var(--green-medium);
+}
+
+textarea {
+  resize: none;
+  padding: 10px;
+  width: 40ch;
+  height: 10em;
+}
+
+.consent-container {
+  margin: 0 1vw;
+}
+
+input[type="radio"] {
+  appearance: none; /* Remove default radio button */
+  width: 15px;
+  height: 15px;
+  border: 1px solid var(--medium-grey);
+  border-radius: 50%;
+  background-color: white;
+  transition: 0.3s;
+  position: relative;
+}
+
+input[type="radio"]:checked {
+  background-color: var(--green-medium);
+  border-color: var(--green-medium);
+}
+
+input[type="checkbox"] {
+  accent-color: var(--green-medium);
+}
+
+button {
+  background-color: var(--green-medium);
+  color: var(--white);
+  font-size: 18px;
+}
+
+.error {
+  display: none;
+  color: var(--red);
+}
+
+.modal {
+  background-color: var(--darker-grey);
+  color: var(--white);
+  position: absolute;
+  top: 6px;
+  left: 5%;
+  right: 5%;
+  height: 100px;
+  border-radius: 10px;
+  padding: 15px;
+  line-height: 1.5;
+  display: none;
+}
+
+.modal-paragraph {
+  font-weight: 400;
+}
+
+.modal-paragraph .sent {
+  display: block;
+  font-weight: 700;
+}
+
+.active {
+  display: block;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    padding: 10vh 15vw;
+  }
+
+  form {
+    padding: 40px;
+  }
+
+  .name-container,
+  .query-input-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  .first-name-container,
+  .last-name-container {
+    width: 100%;
+  }
+
+  .modal {
+    top: 5%;
+    left: 20%;
+    right: 20%;
+    height: 80px;
+    line-height: 2;
+  }
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <meta
+      name="author"
+      content="This page is developed by The Grand Gemini as a challenge to solidify his knowledge of javascript "
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+
+    <title>Frontend Mentor | Contact form</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <form action="#">
+      <header class="header-container">
+        <h2 class="heading">Contact Us</h2>
+      </header>
+      <main class="inputs-container">
+        <div class="name-container">
+          <label for="first-name" id="first-Name" class="first-name-container">
+            <p class="input-name">First Name &nbsp;*</p>
+            <input
+              type="text"
+              name="first-name"
+              class="first-name"
+              autocomplete="on"
+            />
+            <p class="first-name-error error">This field is required</p>
+          </label>
+
+          <label for="last-name" id="last-Name" class="last-name-container">
+            <p class="input-name">Last Name &nbsp;*</p>
+            <input
+              type="text"
+              name="last-name"
+              class="last-name"
+              autocomplete="on"
+            />
+            <p class="last-name-error error">This field is required</p>
+          </label>
+        </div>
+
+        <label for="email-address" id="email-address" class="email-container">
+          <p class="input-name" autocomplete="on">Email Address *</p>
+          <input type="email" name="email-address" class="email" />
+          <p class="email-error error">
+            Please enter a valid email address This field is required
+          </p>
+        </label>
+
+        <label for="query" id="query" class="query-container">
+          <p class="input-name">Query Type &nbsp;*</p>
+
+          <div class="query-input-container">
+            <label for="general-enquiry" class="enquiry">
+              <input type="radio" name="query" class="radio" /> General Enquiry
+            </label>
+
+            <label for="support-request" class="support">
+              <input type="radio" name="query" class="radio" /> Support Request
+            </label>
+          </div>
+          <p class="error query-error">Please select a query type</p>
+        </label>
+
+        <label for="message" id="message" class="message-container">
+          <p class="input-name">Message &nbsp;*</p>
+          <textarea class="message"></textarea>
+          <p class="error message-error">This field is required</p>
+        </label>
+
+        <label for="consent" id="consent" class="consent-container">
+          <p class="input-name">
+            <input type="checkbox" name="consent" class="consent" /> I consent
+            to being contacted by the team &nbsp; *
+          </p>
+          <p class="error consent-error">
+            To submit this form, please consent to being contacted
+          </p>
+        </label>
+
+        <label for="submit-button" id="submit" class="button-container"
+          ><button class="button">Submit</button></label
+        >
+      </main>
+    </form>
+
+    <div class="modal">
+      <p class="modal-paragraph">
+        <span class="sent">Message Sent! </span>Thanks for completing the form.
+        We'll be in touch soon!
+      </p>
+    </div>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">The Grand Gemini</a>.
+    </div>
+  </body>
+</html>
