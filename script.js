@@ -3,11 +3,12 @@
 //Selectors Varable
 const btn = document.querySelector("button");
 function validateInput() {
-  const firstName = document.querySelector(".first-name").value;
-  const lastName = document.querySelector(".last-name").value;
-  const email = document.querySelector(".email").value;
-  const message = document.querySelector(".message").value;
+  const firstName = document.querySelector(".first-name");
+  const lastName = document.querySelector(".last-name");
+  const email = document.querySelector(".email");
+  const message = document.querySelector(".message");
   const consent = document.querySelector(".consent");
+  const radio = document.querySelector(".radio");
   const radioBtns = document.querySelectorAll(".radio");
 
   const addError = function (selector) {
@@ -19,19 +20,23 @@ function validateInput() {
     return emailRegex.test(email);
   }
   //firstName validation
-  if (firstName.trim() === "") {
+  if (firstName.value.trim() === "" && firstName.required === true) {
     addError("first-name-error");
     return false;
   }
 
   // lastName validation
-  if (lastName.trim() === "") {
+  if (lastName.value.trim() === "" && lastName.required === true) {
     addError("last-name-error");
     return false;
   }
 
   //email validation
-  if (validateEmail(email) && email.trim() !== "") {
+  if (
+    validateEmail(email.value) &&
+    email.value.trim() !== "" &&
+    email.required === true
+  ) {
     document.querySelector(".email-error").classList.remove("active");
   } else {
     addError("email-error");
@@ -46,19 +51,20 @@ function validateInput() {
       return ischecked;
     }
   });
-  if (!ischecked) {
+  if (!ischecked && radio.required === true) {
     addError("query-error");
     return false;
   }
 
   //message validation
-  if (message.trim() === "") {
+  if (message.value.trim() === "" && message.required === true) {
     addError("message-error");
+    console.log(message);
     return false;
   }
 
   //consent checkbox validation
-  if (consent.checked) {
+  if (consent.checked && consent.required === true) {
     document.querySelector(".consent-error").classList.remove("active");
   } else {
     addError("consent-error");
@@ -68,7 +74,7 @@ function validateInput() {
   return true; // Assume it's valid unless proven otherwise
 }
 
-btn.addEventListener("click", function (e) {
+document.querySelector("form").addEventListener("submit", function (e) {
   e.preventDefault();
 
   function validateForm() {

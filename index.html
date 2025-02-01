@@ -33,7 +33,7 @@
     </style>
   </head>
   <body>
-    <form action="#">
+    <form action="#" id="myForm" novalidate>
       <header class="header-container">
         <h2 class="heading">Contact Us</h2>
       </header>
@@ -46,6 +46,7 @@
               name="first-name"
               class="first-name"
               autocomplete="on"
+              required
             />
             <p class="first-name-error error">This field is required</p>
           </label>
@@ -57,6 +58,7 @@
               name="last-name"
               class="last-name"
               autocomplete="on"
+              required
             />
             <p class="last-name-error error">This field is required</p>
           </label>
@@ -64,7 +66,7 @@
 
         <label for="email-address" id="email-address" class="email-container">
           <p class="input-name" autocomplete="on">Email Address *</p>
-          <input type="email" name="email-address" class="email" />
+          <input type="email" name="email-address" required class="email" />
           <p class="email-error error">
             Please enter a valid email address This field is required
           </p>
@@ -75,11 +77,13 @@
 
           <div class="query-input-container">
             <label for="general-enquiry" class="enquiry">
-              <input type="radio" name="query" class="radio" /> General Enquiry
+              <input type="radio" name="query" required class="radio" /> General
+              Enquiry
             </label>
 
             <label for="support-request" class="support">
-              <input type="radio" name="query" class="radio" /> Support Request
+              <input type="radio" name="query" required class="radio" /> Support
+              Request
             </label>
           </div>
           <p class="error query-error">Please select a query type</p>
@@ -87,14 +91,14 @@
 
         <label for="message" id="message" class="message-container">
           <p class="input-name">Message &nbsp;*</p>
-          <textarea class="message"></textarea>
+          <textarea required class="message"></textarea>
           <p class="error message-error">This field is required</p>
         </label>
 
         <label for="consent" id="consent" class="consent-container">
           <p class="input-name">
-            <input type="checkbox" name="consent" class="consent" /> I consent
-            to being contacted by the team &nbsp; *
+            <input type="checkbox" name="consent" required class="consent" /> I
+            consent to being contacted by the team &nbsp; *
           </p>
           <p class="error consent-error">
             To submit this form, please consent to being contacted
@@ -117,7 +121,7 @@
     <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
-      Coded by <a href="#">The Grand Gemini</a>.
+      Coded by <a href="https://x.com/0xGemini0">The Grand Gemini</a>.
     </div>
   </body>
 </html>
